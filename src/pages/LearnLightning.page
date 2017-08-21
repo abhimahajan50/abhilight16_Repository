@@ -1,0 +1,46 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Thunder Launcher - Lightning Fast Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <apex:slds />
+  <apex:includeLightning />    
+  <style>
+      .thunder-item{
+		margin-20px;border:1px solid #D0D0D0;
+      }
+      #content-area-container{
+      	width:auto;
+      }
+      #content-area-box{
+      	min-height:500px;
+      }
+  </style>
+</head>
+<body>
+  <div class="slds-scope">
+	<div class="slds-container--fluid ">Width 100%</div>      
+	<div class="slds-grid slds-wrap slds-grid--pull-padded">
+      <div class="slds-p-horizontal--small slds-size--1-of-1 slds-theme--shade thunder-item" id='top-nav-bar'>Top Nav Bar</div>
+      <div class="slds-p-horizontal--small slds-size--1-of-1 slds-theme--shade thunder-item" id='header-bar'  style="margin-20px;border:1px solid #D0D0D0;">Header Image</div>
+      <div class="slds-container--center slds-container--fluid thunder-item" id="content-area-container">
+            <div class="slds-box slds-box--small slds-theme--shade thunder-item"  id="content-area-box"><div id="content-area">Content Area</div></div>
+      </div>
+      <div class="slds-p-horizontal--small slds-size--1-of-1 slds-theme--shade thunder-item" id='footer-area'  style="margin-20px;border:1px solid #D0D0D0;">Footer</div>      
+    </div>
+  </div>
+  <!-- JAVASCRIPT -->
+    <script>
+        $Lightning.use("c:LearnLightning", function() {
+        	$Lightning.createComponent("c:TopNavBar", '', 'top-nav-bar');
+        	$Lightning.createComponent("c:HeaderBar", '', 'header-bar');
+        	$Lightning.createComponent("c:ContentArea", '', 'content-area');
+        	$Lightning.createComponent("c:FooterArea", '', 'footer-area');
+        });
+    </script>
+  <!-- / JAVASCRIPT -->
+</body>
+</html>
+</apex:page>
